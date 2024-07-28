@@ -39,12 +39,12 @@ function Home() {
     <div className='search-box'>
         <input type="text" placeholder='Search for countries...' onChange={(e)=>setSearch(e.target.value)} value={search}/>
     </div>
-    <div className='container'>
+    <div className='countryCard'>
 
         {search === "" ? countryList.map(
             (country)=>{
                 return (
-                    <div className='countryCard' key={country.name.common}>
+                    <div className='container' key={country.name.common}>
                         <img src={country.flags.png} alt={country.name.common} />
                         <h2>{country.name.common}</h2>
                     </div>
@@ -53,7 +53,7 @@ function Home() {
         ) :  filterCountryList.map(
             (country)=>{
                 return (
-                    <div className='countryCard' key={country.name.common}>
+                    <div className='container' key={country.name.common}>
                         <img src={country.flags.png} alt={country.name.common} />
                         <h2>{country.name.common}</h2>
                     </div>
